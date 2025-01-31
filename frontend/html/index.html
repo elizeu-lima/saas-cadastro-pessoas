@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div class="login-container" id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Nome:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <button id="toggle-register" class="toggle-form">Não tem conta? Criar conta.</button>
+        <p id="login-error-message" class="error-message"></p>
+    </div>
+
+    <!-- Tela de Cadastro -->
+    <div class="register-container" id="register-container" style="display: none;">
+        <h2>Criar Conta</h2>
+        <form id="register-form">
+            <div class="input-group">
+                <label for="register-name">Nome:</label>
+                <input type="text" id="register-name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="register-password">Senha:</label>
+                <input type="password" id="register-password" name="password" required>
+            </div>
+            <button type="submit">Criar Conta</button>
+        </form>
+        <button id="toggle-back" class="toggle-form">Já tem conta? Fazer login.</button>
+        <p id="register-error-message" class="error-message"></p>
+    </div>
+
+    <!-- Tela de Pessoas -->
+    <div class="people-container" id="people-container" style="display: none;">
+        <h2>Pessoas Cadastradas</h2>
+        <button id="logout-btn">Sair</button>
+        <div class="filter-container">
+            <label for="filter-name">Filtrar por nome:</label>
+            <input type="text" id="filter-name" placeholder="Nome">
+            <button id="filter-btn">Filtrar</button>
+        </div>
+        <button id="create-person-btn">Cadastrar Pessoa</button>
+        <div id="people-list"></div>
+    </div>
+
+    <!-- Modal para Criar/Editar Pessoa -->
+    <div class="modal" id="person-modal" style="display: none;">
+        <h2 id="modal-title">Cadastrar Pessoa</h2>
+        <form id="person-form">
+            <input type="text" id="person-name" placeholder="Nome" required>
+            <input type="number" id="person-age" placeholder="Idade" required>
+            <input type="text" id="person-email" placeholder="Email" required>
+            <button type="submit">Salvar</button>
+        </form>
+        <button id="close-modal-btn">Fechar</button>
+    </div>
+
+    <!-- Script JS -->
+    <script  src="script.js"></script>
+</body>
+</html>
